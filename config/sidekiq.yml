@@ -1,0 +1,5 @@
+---
+:environment: <%= ENV['PUNK_ENV'] %>
+:concurrency: 5
+production:
+  :concurrency: 10
