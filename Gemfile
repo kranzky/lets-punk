@@ -6,8 +6,8 @@ source 'https://rubygems.org'
 ruby "2.6.6"
 
 # Framework
-# gem 'punk', '~> 0.0.0'
-gem 'punk', path: '../punk'
+gem 'punk', '~> 0.0.1'
+# gem 'punk', path: '../punk'
 
 # Development
 group :development do
