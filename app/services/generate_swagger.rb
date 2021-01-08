@@ -5,7 +5,7 @@ class GenerateSwaggerService < PUNK::Service
     path = File.join(PUNK.get.app.path, '..', 'www', 'swagger.json')
     raise PUNK::InternalServerError, 'swagger.json already exists' if File.exist?(path) && !PUNK.env.test?
     require 'swagger_yard'
-    require_relative '../../lib/railroad/helpers/swagger'
+    require 'punk/helpers/swagger'
     SwaggerYard.register_custom_yard_tags!
     SwaggerYard.configure do |config|
       config.api_version = PUNK.version
@@ -17,7 +17,10 @@ class GenerateSwaggerService < PUNK::Service
     end
     spec = SwaggerYard::OpenAPI.new
     blob = JSON.pretty_generate(spec.to_h)
-    File.open(path, "w") { |f| f << blob } unless PUNK.env.test?
+    unless PUNK.env.test?
+      FileUtils.mkdir_p(File.dirname(path))
+      File.open(path, "w") { |f| f << blob }
+    end
     blob
   end
 end

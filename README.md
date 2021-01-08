@@ -1,3 +1,5 @@
+![Test Punk!](https://github.com/kranzky/lets-punk/workflows/Test%20Punk!/badge.svg)
+
 # Let's Punk!
 
 Template project for Punk! omakase web framework for rapid prototyping.
