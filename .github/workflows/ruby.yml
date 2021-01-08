@@ -18,4 +18,4 @@ jobs:
       with:
         bundler-cache: true
     - name: Run tests
-      run: punk test
+      run: bundle exec punk test
