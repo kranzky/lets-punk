@@ -1,4 +1,4 @@
-![Test Punk!](https://github.com/kranzky/lets-punk/workflows/Test%20Punk!/badge.svg)
+[![Test Punk!](https://github.com/kranzky/lets-punk/workflows/Test%20Punk!/badge.svg)](https://github.com/kranzky/lets-punk/actions?query=workflow%3A%22Test+Punk%21%22)
 
 # Let's Punk!
 
