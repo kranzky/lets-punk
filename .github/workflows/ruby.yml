@@ -22,4 +22,4 @@ jobs:
     - name: Introspect 2
       run: ls -la
     - name: Run tests
-      run: bundle exec punk test
+      run: bundle exec rubocop
