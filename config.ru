@@ -16,5 +16,5 @@ if ENV.key?('SKYLIGHT_AUTHENTICATION')
 end
 
 require 'punk'
-Punk.init(task: 'server').exec
-run Punk.app
+PUNK.init(task: 'server').exec
+run PUNK.app
