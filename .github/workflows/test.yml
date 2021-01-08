@@ -1,4 +1,4 @@
-name: Test Punk!
+name: test
 
 on:
   push:
