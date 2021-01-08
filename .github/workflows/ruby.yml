@@ -9,7 +9,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    environment: test
+    env:
+      PUNK_ENV: test
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
