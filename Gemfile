@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 # Language
-ruby "2.6.6"
+ruby '2.6.6'
 
 # Framework
 gem 'punk', '~> 0.0.2'
