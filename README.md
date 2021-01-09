@@ -1,5 +1,4 @@
 [![test](https://github.com/kranzky/lets-punk/workflows/test/badge.svg)](https://github.com/kranzky/lets-punk/actions?query=workflow%3Atest)
-[![ship](https://github.com/kranzky/lets-punk/workflows/ship/badge.svg)](https://github.com/kranzky/lets-punk/actions?query=workflow%3Aship)
 
 # Let's Punk!
 
