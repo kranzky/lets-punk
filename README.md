@@ -1,4 +1,5 @@
 [![test](https://github.com/kranzky/lets-punk/workflows/test/badge.svg)](https://github.com/kranzky/lets-punk/actions?query=workflow%3Atest)
+[![Coverage Status](https://coveralls.io/repos/github/kranzky/lets-punk/badge.svg?branch=main)](https://coveralls.io/github/kranzky/lets-punk?branch=main)
 
 # Let's Punk!
 
