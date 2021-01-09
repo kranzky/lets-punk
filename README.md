@@ -21,6 +21,10 @@ Template project for Punk! omakase web framework for rapid prototyping.
 > punk worker
 ```
 
+## Release Process
+
+Create a new tag and release on GitHub to trigger ship workflow.
+
 ## Copyright
 
 Copyright (c) 2021 Jason Hutchens. See LICENSE for further details.
