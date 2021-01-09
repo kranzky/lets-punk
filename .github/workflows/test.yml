@@ -7,11 +7,27 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PUNK_ENV: test
+      COVERALLS_REPO_TOKEN: "${{secrets.COVERALLS_REPO_TOKEN}}"
+      DATABASE_URL: "postgres://postgres:postgres@localhost/lets_punk_test"
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
+    - name: Migrate database
+      run: bundle exec punk db create
     - name: Run tests
       run: bundle exec punk test
