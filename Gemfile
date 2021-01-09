@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 ruby '2.6.6'
 
 # Framework
-gem 'punk', '~> 0.0.2'
+gem 'punk', '~> 0.1.4'
 # gem 'punk', path: '../punk'
 
 # Development
@@ -23,7 +23,7 @@ group :test do
   gem 'rack-test', '~> 1.1.0'
   gem 'rspec', '~> 3.10.0'
   gem 'rspec-its', '~> 1.3.0'
-  gem 'rubocop', '~> 1.7.0'
+  gem 'rubocop', '~> 1.8.0'
   gem 'rubocop-rails', '~> 2.9.1'
   gem 'rubocop-rspec', '~> 2.1.0'
   gem 'rubocop-sequel', '~> 0.1.0'
