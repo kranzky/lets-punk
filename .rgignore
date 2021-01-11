@@ -1,0 +1,3 @@
+*.lock
+/public/api/swagger*
+/www/api/swagger*

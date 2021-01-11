@@ -9,6 +9,10 @@ Template project for Punk! omakase web framework for rapid prototyping.
 
 ```
 > brew bundle
+> nvm use `cat .nvmrc`
+> npm uninstall --global quasar-cli
+> npm install --global @quasar/cli@1.1.3
+> yarn install
 > bundle install
 ```
 
@@ -19,6 +23,7 @@ Template project for Punk! omakase web framework for rapid prototyping.
 > punk db migrate
 > punk server
 > punk worker
+> quasar dev
 ```
 
 ## Release Process

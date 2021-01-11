@@ -13,7 +13,7 @@ class GenerateSwaggerService < PUNK::Service
       config.description = PUNK.get.app.description
       config.api_base_path = PUNK.get.app.url
       config.controller_path = File.join('app', 'routes', '**', '*')
-      config.model_path = [File.join('app', 'models', '**', '*'), File.join('lib', 'railroad', 'views', '**', '*')]
+      config.model_path = [File.join('app', 'models', '**', '*')]
     end
     spec = SwaggerYard::OpenAPI.new
     blob = JSON.pretty_generate(spec.to_h)
