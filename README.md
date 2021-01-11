@@ -26,6 +26,13 @@ Template project for Punk! omakase web framework for rapid prototyping.
 > quasar dev
 ```
 
+## Icon and Splash Screen
+
+```
+> yarn global add @quasar/icongenie
+> icongenie generate --icon punk-icon.png --background punk-splash.png --mode pwa --splashscreen-icon-ratio 0 --skip-trim
+```
+
 ## Release Process
 
 Create a new tag and release on GitHub to trigger ship workflow.
