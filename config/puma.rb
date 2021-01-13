@@ -9,7 +9,7 @@ environment ENV.fetch('RACK_ENV', 'development')
 wait_for_less_busy_worker 0.001
 if ENV.key?('SENTRY_DSN')
   lowlevel_error_handler do |e, env|
-    Raven.capture_exception(
+    Sentry.capture_exception(
       e,
       message: e.message,
       extra: { puma: env },

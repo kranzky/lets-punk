@@ -8,7 +8,10 @@ jobs:
     env:
       PUNK_ENV: test
       COVERALLS_REPO_TOKEN: "${{secrets.COVERALLS_REPO_TOKEN}}"
+      IPSTACK_ACCESS_KEY: "${{secrets.IPSTACK_ACCESS_KEY}}"
+      USERSTACK_API_KEY: "${{secrets.USERSTACK_API_KEY}}"
       DATABASE_URL: "postgres://postgres:postgres@localhost/lets_punk_test"
+
     services:
       postgres:
         image: postgres
@@ -21,6 +24,11 @@ jobs:
           --health-retries 5
         ports:
           - 5432:5432
+      memcached:
+        image: memcached
+        ports:
+          - 11211:11211
+        options: --health-cmd "timeout 5 bash -c 'cat < /dev/null > /dev/udp/127.0.0.1/11211'" --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
@@ -28,6 +36,8 @@ jobs:
       with:
         bundler-cache: true
     - name: Migrate database
-      run: bundle exec punk db create
+      run: |
+        bundle exec punk db create
+        bundle exec punk db migrate
     - name: Run tests
       run: bundle exec punk test

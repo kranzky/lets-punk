@@ -16,6 +16,13 @@ Template project for Punk! omakase web framework for rapid prototyping.
 > bundle install
 ```
 
+### Services
+
+* Sign up at https://userstack.com/
+* Add `USERSTACK_API_KEY` to `env/locals.sh`, GitHub secrets and Heroku config vars
+* Sign up at https://ipstack.com/
+* Add `IPSTACK_ACCESS_KEY` to `env/locals.sh`, GitHub secrets and Heroku config vars
+
 ## Usage
 
 ```
@@ -23,7 +30,7 @@ Template project for Punk! omakase web framework for rapid prototyping.
 > punk db migrate
 > punk server
 > punk worker
-> quasar dev
+> quasar dev -m pwa
 ```
 
 ## Icon and Splash Screen

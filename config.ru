@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 if ENV.key?('SENTRY_DSN')
-  require 'raven'
-  Raven.configure do |config|
+  require 'sentry-ruby'
+  Sentry.init do |config|
     config.dsn = ENV.fetch('SENTRY_DSN')
   end
-  use Raven::Rack
+  use Sentry::Rack
 end
 
 if ENV.key?('SKYLIGHT_AUTHENTICATION')
