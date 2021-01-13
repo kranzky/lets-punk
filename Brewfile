@@ -15,7 +15,4 @@ brew 'redis'
 brew 'libsodium'
 
 # Selenium tests
-brew 'geckodriver'
-
-# IP Lookup
-brew 'geoipupdate'
+brew 'chromedriver'
