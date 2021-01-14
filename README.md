@@ -44,6 +44,12 @@ Template project for Punk! omakase web framework for rapid prototyping.
 
 Create a new tag and release on GitHub to trigger ship workflow.
 
+## Heroku
+
+```
+> heroku labs:enable runtime-dyno-metadata --app app-name
+```
+
 ## Copyright
 
 Copyright (c) 2021 Jason Hutchens. See LICENSE for further details.
