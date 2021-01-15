@@ -5,7 +5,7 @@ if ENV.key?('SENTRY_DSN')
   Sentry.init do |config|
     config.dsn = ENV.fetch('SENTRY_DSN')
   end
-  use Sentry::Rack
+  use Sentry::Rack::CaptureExceptions
 end
 
 if ENV.key?('SKYLIGHT_AUTHENTICATION')
