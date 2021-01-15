@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Let's Punk!"
+  name: "lets-punk"
 };
 </script>
 

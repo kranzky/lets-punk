@@ -16,13 +16,6 @@ Template project for Punk! omakase web framework for rapid prototyping.
 > bundle install
 ```
 
-### Services
-
-* Sign up at https://userstack.com/
-* Add `USERSTACK_API_KEY` to `env/locals.sh`, GitHub secrets and Heroku config vars
-* Sign up at https://ipstack.com/
-* Add `IPSTACK_ACCESS_KEY` to `env/locals.sh`, GitHub secrets and Heroku config vars
-
 ## Usage
 
 ```
@@ -49,6 +42,19 @@ Create a new tag and release on GitHub to trigger ship workflow.
 ```
 > heroku labs:enable runtime-dyno-metadata --app app-name
 ```
+
+### Build
+
+* Add the `heroku/nodejs` and `https://github.com/challengee/heroku-buildpack-libsodium.git` build packs
+
+### Services
+
+* Sign up at https://userstack.com/
+* Add `USERSTACK_API_KEY` to `env/locals.sh`, GitHub secrets and Heroku config vars
+* Sign up at https://ipstack.com/
+* Add `IPSTACK_ACCESS_KEY` to `env/locals.sh`, GitHub secrets and Heroku config vars
+* Add MailGun, MemCachier, Papertrail, Sentry and Heroku Redis free Heroku add-ons
+* Add `MAILGUN_DOMAIN` to Heroku config vars for a custom domain
 
 ## Copyright
 

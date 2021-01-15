@@ -3,14 +3,12 @@
     <q-layout view="lHh Lpr lFf">
       <q-header elevated>
         <q-toolbar>
-          <main-menu-button />
           <q-toolbar-title>{{ pageTitle }}</q-toolbar-title>
         </q-toolbar>
       </q-header>
-      <main-menu-drawer />
       <q-page-container>
         <div class="row justify-center bg-accent">
-          <router-view class="gf-page col bg-grey-2 shadow-12" />
+          <router-view class="col bg-grey-2 shadow-12" />
         </div>
       </q-page-container>
     </q-layout>
@@ -39,10 +37,3 @@ export default {
   }
 };
 </script>
-
-<style lang="stylus" scoped>
-.gf-page {
-  width: 100%;
-  max-width: 720px;
-}
-</style>
