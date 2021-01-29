@@ -16,24 +16,31 @@
 </template>
 
 <script>
-import { LoggerMixin } from "../mixins/LoggerMixin.js";
+import { LoggerMixin } from "../mixins/LoggerMixin.js"
 export default {
   name: "MainLayout",
   mixins: [LoggerMixin],
-  components: {
+  data() {
+    return {
+    }
+  },
+  methods: {
   },
   created() {
-    this.registerPunk();
+    this.registerPunk()
   },
   beforeDestroy() {
-    this.deregisterPunk();
+    this.deregisterPunk()
   },
   computed: {
     pageTitle: {
       get() {
-        return this.$store.state.page.title;
+        return this.$store.state.page.title
       }
     }
   }
-};
+}
 </script>
+
+<style>
+</style>

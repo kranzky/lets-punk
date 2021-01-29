@@ -1,3 +1,6 @@
+const fs = require('fs')
+const packageJson = fs.readFileSync('./package.json')
+const packageVersion = JSON.parse(packageJson).version || '?'
 module.exports = function(ctx) {
   return {
     boot: ["addressbar-color", "axios", "lodash"],
@@ -66,6 +69,9 @@ module.exports = function(ctx) {
             formatter: require("eslint").CLIEngine.getFormatter("stylish")
           }
         });
+      },
+      env: {
+        PACKAGE_VERSION: packageVersion
       }
     },
 
@@ -86,6 +92,10 @@ module.exports = function(ctx) {
     },
 
     pwa: {
+      workboxOptions: {
+        skipWaiting: true,
+        clientsClaim: true
+      },
       manifest: {
         name: "Let's Punk!",
         short_name: "Let's Punk!",

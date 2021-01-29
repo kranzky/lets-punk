@@ -2,57 +2,66 @@ export const LoggerMixin = {
   name: "LoggerMixin",
   methods: {
     registerPunk() {
-      this.$root.$on("punk:response", this.logResponse);
-      this.$root.$on("punk:error", this.logError);
+      this.$root.$on("punk:info", this.logInfo)
+      this.$root.$on("punk:success", this.logSuccess)
+      this.$root.$on("punk:error", this.logError)
     },
     deregisterPunk() {
-      this.$root.$off("punk:response", this.logResponse);
-      this.$root.$off("punk:error", this.logError);
+      this.$root.$off("punk:info", this.logInfo)
+      this.$root.$off("punk:success", this.logSuccess)
+      this.$root.$off("punk:error", this.logError)
     },
-    logResponse(response) {
-      let message = "Received response.";
+    showNotification(type, message) {
+      this.$q.notify({
+        type: type,
+        message: message,
+        position: 'bottom-left',
+        timeout: 10000,
+        actions: [{ icon: 'close', color: 'white' }]
+      })
+    },
+    logInfo(response) {
+      let message = response
       if (response.data && response.data.message) {
-        message = response.data.message;
-        if (process.env.DEV) {
-          console.info(message); // eslint-disable-line no-console
-        }
-        this.$q.notify({
-          color: "info",
-          icon: "info",
-          message: message
-        });
+        message = response.data.message
       }
+      if (process.env.DEV) {
+        console.debug(message) // eslint-disable-line no-console
+      }
+      this.showNotification('info', message)
+    },
+    logSuccess(response) {
+      let message = response
+      if (response.data && response.data.message) {
+        message = response.data.message
+      }
+      if (process.env.DEV) {
+        console.info(message) // eslint-disable-line no-console
+      }
+      this.showNotification('positive', message)
     },
     logError(error) {
-      let message = "An error occurred.";
-      let errors = [];
+      let message = error
+      let errors = []
       if (error.response && error.response.data) {
-        let data = error.response.data;
+        let data = error.response.data
         if (typeof data == "object") {
-          message = data.message;
-          errors = data.errors;
+          message = data.message
+          errors = data.errors
         } else {
-          message = data;
+          message = data
         }
       }
       if (process.env.DEV) {
-        console.error(message); // eslint-disable-line no-console
+        console.error(message) // eslint-disable-line no-console
       }
-      this.$q.notify({
-        color: "negative",
-        icon: "report_problem",
-        message: message
-      });
+      this.showNotification('negative', message)
       errors.forEach(message => {
         if (process.env.DEV) {
-          console.warn(message); // eslint-disable-line no-console
+          console.warn(message) // eslint-disable-line no-console
         }
-        this.$q.notify({
-          color: "warning",
-          icon: "report_problem",
-          message: message
-        });
-      });
+        this.showNotification('warning', message)
+      })
     }
   }
-};
+}

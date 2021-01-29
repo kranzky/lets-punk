@@ -6,7 +6,9 @@
 
 <script>
 export default {
-  name: "lets-punk"
+  name: "lets-punk",
+  mounted() {
+  }
 };
 </script>
 
