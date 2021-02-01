@@ -127,10 +127,11 @@ module.exports = function(ctx) {
             type: "image/png"
           }
         ],
-        display: "standalone",
-        orientation: "portrait",
+        display: "fullscreen",
+        orientation: "portrait-primary",
         background_color: "#ffffff",
-        theme_color: "#f28433"
+        theme_color: "#f28433",
+        categories: ["entertainment", "games"]
       }
     },
 
