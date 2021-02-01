@@ -16,21 +16,21 @@ end
 
 # Testing
 group :test do
-  gem 'capybara', '~> 3.35.1'
+  gem 'capybara', '~> 3.35.3'
   gem 'coveralls', '~> 0.8.23'
   gem 'factory_bot', '~> 6.1.0'
   gem 'faker', '~> 2.15.1'
   gem 'rack-test', '~> 1.1.0'
   gem 'rspec', '~> 3.10.0'
   gem 'rspec-its', '~> 1.3.0'
-  gem 'rubocop', '~> 1.9.0'
+  gem 'rubocop', '~> 1.9.1'
   gem 'rubocop-rails', '~> 2.9.1'
   gem 'rubocop-rspec', '~> 2.1.0'
   gem 'rubocop-sequel', '~> 0.2.0'
   gem 'selenium-webdriver', '~> 3.142.7'
   gem 'timecop', '~> 0.9.2'
   gem 'vcr', '~> 6.0.0'
-  gem 'webmock', '~> 3.11.1'
+  gem 'webmock', '~> 3.11.2'
 end
 
 # Non-production
