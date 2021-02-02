@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 ruby '2.6.6'
 
 # Framework
-gem 'punk', '~> 0.3.2'
+gem 'punk', '~> 0.3.3'
 # gem 'punk', path: '../punk'
 
 # Development
