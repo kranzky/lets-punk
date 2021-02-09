@@ -31,6 +31,17 @@ jobs:
         options: --health-cmd "timeout 5 bash -c 'cat < /dev/null > /dev/udp/127.0.0.1/11211'" --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
     - uses: actions/checkout@v2
+    - name: Set up Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '12.19.0'
+    - run: yarn install
+    - name: Run linter
+      run: yarn lint
+    - name: Build app
+      run: |
+        npm install --global @quasar/cli@1.1.3
+        quasar build
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:

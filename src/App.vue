@@ -6,10 +6,9 @@
 
 <script>
 export default {
-  name: "lets-punk",
-  mounted() {
-  }
-};
+  name: "lets-punk"
+}
 </script>
 
-<style></style>
+<style scoped lang="stylus">
+</style>

@@ -25,10 +25,10 @@ group :test do
   gem 'rspec-its', '~> 1.3.0'
   gem 'rubocop', '~> 1.9.1'
   gem 'rubocop-rails', '~> 2.9.1'
-  gem 'rubocop-rspec', '~> 2.1.0'
+  gem 'rubocop-rspec', '~> 2.2.0'
   gem 'rubocop-sequel', '~> 0.2.0'
   gem 'selenium-webdriver', '~> 3.142.7'
-  gem 'timecop', '~> 0.9.2'
+  gem 'timecop', '~> 0.9.3'
   gem 'vcr', '~> 6.0.0'
   gem 'webmock', '~> 3.11.2'
 end
