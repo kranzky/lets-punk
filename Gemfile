@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 ruby '2.6.6'
 
 # Framework
-gem 'punk', '~> 0.3.3'
+gem 'punk', '~> 0.3.4'
 # gem 'punk', path: '../punk'
 
 # Development
@@ -30,7 +30,7 @@ group :test do
   gem 'selenium-webdriver', '~> 3.142.7'
   gem 'timecop', '~> 0.9.4'
   gem 'vcr', '~> 6.0.0'
-  gem 'webmock', '~> 3.11.2'
+  gem 'webmock', '~> 3.11.3'
 end
 
 # Non-production
