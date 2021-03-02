@@ -12,9 +12,9 @@
     "heroku-postbuild": "quasar build -m pwa"
   },
   "dependencies": {
-    "@quasar/extras": "^1.9.17",
+    "@quasar/extras": "^1.9.18",
     "axios": "^0.21.1",
-    "core-js": "^3.9.0",
+    "core-js": "^3.9.1",
     "lodash": "^4.17.21",
     "quasar": "^1.15.4"
   },
