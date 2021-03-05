@@ -15,4 +15,4 @@ coverage
 .quasar
 src/statics
 .vscode
-www
+www/

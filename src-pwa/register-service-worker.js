@@ -22,11 +22,11 @@ register(process.env.SERVICE_WORKER_FILE, {
       icon: 'cloud_download',
       timeout: 15000,
       actions: [{
-        label: "Update Now",
-        color: "secondary",
+        label: 'Update Now',
+        color: 'secondary',
         handler: () => {
           Loading.show()
-          location.reload(true)
+          window.location.reload(true)
         }
       }]
     })
@@ -36,5 +36,6 @@ register(process.env.SERVICE_WORKER_FILE, {
   },
 
   error (err) {
+    console.error(err)
   }
 })

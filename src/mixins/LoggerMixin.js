@@ -1,17 +1,17 @@
 export const LoggerMixin = {
-  name: "LoggerMixin",
+  name: 'LoggerMixin',
   methods: {
-    registerPunk() {
-      this.$root.$on("punk:info", this.logInfo)
-      this.$root.$on("punk:success", this.logSuccess)
-      this.$root.$on("punk:error", this.logError)
+    registerPunk () {
+      this.$root.$on('punk:info', this.logInfo)
+      this.$root.$on('punk:success', this.logSuccess)
+      this.$root.$on('punk:error', this.logError)
     },
-    deregisterPunk() {
-      this.$root.$off("punk:info", this.logInfo)
-      this.$root.$off("punk:success", this.logSuccess)
-      this.$root.$off("punk:error", this.logError)
+    deregisterPunk () {
+      this.$root.$off('punk:info', this.logInfo)
+      this.$root.$off('punk:success', this.logSuccess)
+      this.$root.$off('punk:error', this.logError)
     },
-    showNotification(type, message) {
+    showNotification (type, message) {
       this.$q.notify({
         type: type,
         message: message,
@@ -20,7 +20,7 @@ export const LoggerMixin = {
         actions: [{ icon: 'close', color: 'white' }]
       })
     },
-    logInfo(response) {
+    logInfo (response) {
       let message = response
       if (response.data && response.data.message) {
         message = response.data.message
@@ -30,7 +30,7 @@ export const LoggerMixin = {
       }
       this.showNotification('info', message)
     },
-    logSuccess(response) {
+    logSuccess (response) {
       let message = response
       if (response.data && response.data.message) {
         message = response.data.message
@@ -40,12 +40,12 @@ export const LoggerMixin = {
       }
       this.showNotification('positive', message)
     },
-    logError(error) {
+    logError (error) {
       let message = error
       let errors = []
       if (error.response && error.response.data) {
-        let data = error.response.data
-        if (typeof data == "object") {
+        const data = error.response.data
+        if (typeof data === 'object') {
           message = data.message
           errors = data.errors
         } else {

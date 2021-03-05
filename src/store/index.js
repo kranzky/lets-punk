@@ -1,17 +1,17 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-import page from "./page";
+import page from './page'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
-export default function() {
+export default function () {
   const Store = new Vuex.Store({
     modules: {
       page
     },
     strict: process.env.DEV
-  });
+  })
 
-  return Store;
+  return Store
 }

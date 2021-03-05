@@ -1,5 +1,5 @@
-import lodash from "lodash";
+import lodash from 'lodash'
 
 export default async ({ Vue }) => {
-  Vue.prototype.$lodash = lodash;
-};
+  Vue.prototype.$lodash = lodash
+}
