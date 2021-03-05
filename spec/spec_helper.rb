@@ -1,55 +1,55 @@
 # frozen_string_literal: true
 
-require 'simplecov'
-require 'coveralls'
+require "simplecov"
+require "coveralls"
 SimpleCov.start do
-  add_filter 'spec'
-  add_filter 'lib/punk/commands/auth.rb'
-  add_filter 'lib/punk/commands/generate.rb'
-  add_filter 'lib/punk/commands/http.rb'
-  add_filter 'lib/punk/commands/list.rb'
-  add_filter 'lib/punk/core/commands.rb'
-  add_filter 'lib/punk/framework/command.rb'
-  add_filter 'lib/punk/plugins/cors.rb'
-  add_filter 'lib/punk/plugins/ssl.rb'
-  add_filter 'lib/punk/startup/logger.rb'
+  add_filter "spec"
+  add_filter "lib/punk/commands/auth.rb"
+  add_filter "lib/punk/commands/generate.rb"
+  add_filter "lib/punk/commands/http.rb"
+  add_filter "lib/punk/commands/list.rb"
+  add_filter "lib/punk/core/commands.rb"
+  add_filter "lib/punk/framework/command.rb"
+  add_filter "lib/punk/plugins/cors.rb"
+  add_filter "lib/punk/plugins/ssl.rb"
+  add_filter "lib/punk/startup/logger.rb"
 end
 Coveralls.wear!
 
-require 'punk'
+require "punk"
 
-require 'factory_bot'
-require 'faker'
-require 'timecop'
-require 'securerandom'
-require 'vcr'
-require 'rack/test'
-require 'capybara/rspec'
+require "factory_bot"
+require "faker"
+require "timecop"
+require "securerandom"
+require "vcr"
+require "rack/test"
+require "capybara/rspec"
 require "selenium/webdriver"
 
-Faker::Config.locale = 'en-US'
+Faker::Config.locale = "en-US"
 
 FactoryBot.use_parent_strategy = false
 
 VCR.configure do |c|
   c.ignore_localhost = true
-  c.cassette_library_dir = 'spec/vcr_cassettes'
+  c.cassette_library_dir = "spec/vcr_cassettes"
   c.hook_into :webmock
   c.configure_rspec_metadata!
 end
 
-PUNK.init(task: 'spec', config: { app: { name: 'Punk Test' } }).exec
+PUNK.init(task: "spec", config: {app: {name: "Punk Test"}}).exec
 
-Sidekiq.logger = SemanticLogger['PUNK::SKQ']
+Sidekiq.logger = SemanticLogger["PUNK::SKQ"]
 
 Capybara.app = PUNK.app
 Capybara.register_driver :headless_chrome do |app|
-  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(chromeOptions: { args: %w[headless disable-gpu no-sandbox disable-dev-shm-usage] })
+  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(chromeOptions: {args: %w[headless disable-gpu no-sandbox disable-dev-shm-usage]})
   Capybara::Selenium::Driver.new app, browser: :chrome, desired_capabilities: capabilities
 end
 Capybara.javascript_driver = :headless_chrome
 
-RSpec.shared_context 'Punk' do # rubocop:disable RSpec/ContextWording
+RSpec.shared_context "Punk" do # rubocop:disable RSpec/ContextWording
   include Rack::Test::Methods
 
   subject { last_response }
@@ -66,7 +66,7 @@ RSpec.shared_context 'Punk' do # rubocop:disable RSpec/ContextWording
         "PATH_INFO" => "/sessions",
         "CONTENT_TYPE" => "text/json",
         "SCRIPT_NAME" => "",
-        "rack.input" => StringIO.new({ claim: claim }.to_json)
+        "rack.input" => StringIO.new({claim: claim}.to_json)
       )
     response = ActiveSupport::JSON.decode(response[-1].first).deep_symbolize_keys
     slug = response[:slug]
@@ -77,7 +77,7 @@ RSpec.shared_context 'Punk' do # rubocop:disable RSpec/ContextWording
       "PATH_INFO" => "/sessions/#{slug}",
       "CONTENT_TYPE" => "text/json",
       "SCRIPT_NAME" => "",
-      "rack.input" => StringIO.new({ secret: sms[:body][-7..-2] }.to_json)
+      "rack.input" => StringIO.new({secret: sms[:body][-7..-2]}.to_json)
     )
   end
 
@@ -93,13 +93,13 @@ end
 
 module Helpers
   def valid_uuid?(data)
-    data.split('-').map { |s| Integer(s, 16) }.length == 5
+    data.split("-").map { |s| Integer(s, 16) }.length == 5
   end
 end
 
 FactoryBot.define do
   sequence :parse_id do
-    lookup = ('a'..'z').to_a + ('A'..'Z').to_a + ('0'..'9').to_a
+    lookup = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
     10.times.map { lookup.sample }.join
   end
 

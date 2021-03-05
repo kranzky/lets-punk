@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-require 'punk/migrations/001_punk'
+require "punk/migrations/001_punk"

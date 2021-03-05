@@ -5,7 +5,7 @@
 # @property name(required) [string] the name of the widget
 # @property icon(required) [string] an image URL
 class Widget < PUNK::Model
-  alias to_s name
+  alias_method :to_s, :name
 
   def validate
     validates_presence :name

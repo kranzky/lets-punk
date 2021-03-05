@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-brew 'git'
+brew "git"
 
 # Database
-brew 'postgresql'
+brew "postgresql"
 
 # Caching
-brew 'memcached'
+brew "memcached"
 
 # Sidekiq
-brew 'redis'
+brew "redis"
 
 # Cookie handling
-brew 'libsodium'
+brew "libsodium"
 
 # Selenium tests
-brew 'chromedriver'
+brew "chromedriver"

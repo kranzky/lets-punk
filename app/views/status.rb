@@ -10,6 +10,6 @@ class Status < PUNK::View
   end
 
   def process
-    'status'
+    "status"
   end
 end
