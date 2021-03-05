@@ -36,6 +36,6 @@ register(process.env.SERVICE_WORKER_FILE, {
   },
 
   error (err) {
-    console.error(err)
+    console.error(err) // eslint-disable-line no-console
   }
 })
