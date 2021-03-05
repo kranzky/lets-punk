@@ -3,6 +3,7 @@
 [![test](https://github.com/kranzky/lets-punk/workflows/test/badge.svg)](https://github.com/kranzky/lets-punk/actions?query=workflow%3Atest)
 [![Coverage Status](https://coveralls.io/repos/github/kranzky/lets-punk/badge.svg?branch=main)](https://coveralls.io/github/kranzky/lets-punk?branch=main)
 [![View performance data on Skylight](https://badges.skylight.io/typical/aybo6Vh1GiAs.svg?token=s6UcTqIGcrc1zWwmCKEsE7YlMY7duJIqKR5Bok2k2bk)](https://www.skylight.io/app/applications/aybo6Vh1GiAs)
+[![Australia](https://corona.kranzky.com/oc/anz/au/badge.svg)](https://corona.kranzky.com?region=oc&subregion=anz&country=au)
 
 # Let's Punk!
 
